@@ -3,6 +3,7 @@
 ### Authors:
 
 `Aizaz Ansari:`     github.com/aizazansari
+
 `Waleed Hashmi:`    github.com/WaleedHashmi 
 
 ## Background
@@ -150,115 +151,4 @@ made our code loop over the English ordinal numbers for Centuries and Millennium
 from these category pages in English Wikipedia, we used the BeautifulSoup library to find
 and redirect to the Urdu URLs for the same category pages. Following is the code for this:
 
-    link_millennium = ['1st','2nd','3rd','4th']
-    for element in link_millennium:
-        url = "https://en.wikipedia.org/wiki/Categories:" + element + "-millennium_BC_births"
-        res = requests.get(url) 
-        soup = bs(res.text,"lxml")
-        try:
-            item = soup.find ("a",{"hreflang":"ur"})["href"]
-            dictionary = function_scrap_year(URL)
-
-Furthermore, while generating URLs from the Hindi dataset of names, it was difficult for us
-to initially understand the design of the script (which we found to be similar to english) due
-to our unfamiliarity with the language. We had to use google translate to understand the
-Hindi script better and cater to several corner cases.
-
-Another problem that we came across was because of the massive scale of the data that
-we were working on. We lost connection several times to the Wikipedia servers including
-one time when only 11 years (out of 5000) of scraping was left. For the second phase of
-our code, we structured our code in such a way that it wrote the results in the database
-whenever it ran into an error. This made us save time in the case of a loss of connection or
-any other interruption.
-
-## Findings
-
-By comparing Urdu edition of Wikipedia to other editions of Wikipedia, we found out that
-out of the 11,542 pages extracted, 994 pages (8.9%) are completely unique to the Urdu
-edition of Wikipedia — they don’t appear in any other Wikipedia edition. Following is the
-distribution of language editions of the pages collected from the Urdu edition of Wikipedia.
-
-<p align="center">
-<img src = "readme01.png"  width=400px/>
-</p>
-
-As mentioned earlier, the 7 most populous editions of Wikipedia have already been
-scraped. Comparing the pages from the Urdu data set to these versions, we found out
-that 1,205 pages (10.44% of the Urdu Dataset) do not have a corresponding page in any
-of these 7 editions of Wikipedia. This strengthens the hypothesis about the importance of
-languages like Urdu and their addition to the knowledge base. It shows that every
-language has a significant amount of information that cannot be found in English or other
-databases of populous language editions. Out of these 1205 pages independent from the
-7 populous editions, approximately 17.2% of them exist in other less populous language
-editions. This number, although very small, includes several important people who cannot
-be ignored. This depicts the interdependence of less populous language editions and their
-independence from populous editions.
-
-Similar tests were run on the Hindi data set.
-
-<p align="center">
-<img src = "readme02.png" width=400px />
-</p>
-
-The results are very similar to Urdu database. 1,539 pages were found to be unique to
-only Hindi and only 1,870 pages had editions in 20 or more languages. It was also found
-that 1,651 pages (17.2% of the Hindi database) are not a part of any of the 7 Wikipedia
-editions. This reinforces the importance of Hindi and its interdependence with other less
-populous language editions. The percentage of articles unique to Hindi, when compared to
-Urdu, is almost double. This hints the strength of Hindi edition of Wikipedia over its Urdu
-counterpart and shows that the conclusions drawn using the Urdu dataset are more
-concrete when applied to the Hindi edition since it is more independent from populous
-language editions when compared to Urdu.
-
-Another approach to analysis of the databases was to compare the dataset in Urdu to the
-7 most populous Wikipedia editions.
-
-<p align="center">
-<img src = "readme03.png" width=400px />
-</p>
-
-English shares the highest number (88.9%) of Wikipedia pages with Urdu. All of the other
-populous editions more or less share a similar number of around 5000 pages with Urdu.
-Most of these pages can be linked to fig. 1 that showed 59.4% of the pages from the Urdu
-edition had 5 or more Wikipedia editions. Thus, it is due to a large number of pages
-available in these 7 languages alongside Urdu that it is easy to overlook the pages unique
-to llanguages such as Urdu and the interdependence between these less populous
-language editions of Wikipedia.
-
-Similar study can be done on the Hindi dataset.
-
-<p align="center">
-<img src = "readme04.png" width=400px />
-</p>
-
-The analysis of the Hindi dataset reveals very similar results with English sharing the
-highest number of pages with it’s Hindi counterpart.
-
-Coming back to the point of interdependence of less populous languages, it is very
-important to study Urdu and Hindi together. We decided to add Hindi to our research not
-only to make our findings more concrete but also because of the shared colonial history of
-Pakistan and India which would have further contributed to the similarity of the yielded
-data sets. However, initial findings revealed that only 28 pages were unique to Urdu and
-Hindi combined. We modified our analysis technique and identified pages which did not
-exist in the 6 populous language editions (excluding English) but existed in Urdu and Hindi
-for sure and may/ may not have pages in any other language editions (including English
-and other local languages). This increased the number of pages to 888 from 28 which
-makes up of 7.69% of the Urdu database and 6.92% of the Hindi dataset. The modified
-analysis showed that while Urdu and Hindi do not have many articles unique to them,
-taking other regional and local languages (and English) into consideration expanded our
-dataset and showed how Hindi and Urdu were linked by the local languages and English
-from the pre-independence and colonial era when Hindi, Urdu, English and many other
-local languages were in use throughout the subcontinent.
-
-## Conclusion
-
-In our research, we collected data from 2 closely related languages and analysed it to
-depict the importance of these languages. Our findings reaffirm the importance of
-expanding the knowledge base to languages like Urdu and Hindi and how, by overlooking
-these less populous languages, we are ignoring huge amounts of valuable information.
-Alas, with the decline of less populous languages, we are losing no only their literature but
-also culture linked with it.
-
-Our work, we believe, would open up avenues for further research since the
-interdependency or correlation of different Wikipedia editions can be put through deeper
-analysis and trends can be observed in languages belonging to close by regions.
+    link_mil
