@@ -2,9 +2,8 @@
 
 ### Authors:
 
+`Aizaz Ansari:`     github.com/aizazansari
 `Waleed Hashmi:`    github.com/WaleedHashmi 
-
-`Aizaz Ansari:`     github.com/AizazAnsari
 
 ## Background
 
